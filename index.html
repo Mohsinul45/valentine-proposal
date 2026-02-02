@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Cherry 🍒 💖</title>
+
+<style>
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.6);
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Main Card */
+.card {
+    background: white;
+    width: 905%;
+    max-width: 520px;
+    border-radius: 25px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Photo */
+.photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ff6b81;
+    margin-bottom: 20px;
+}
+
+/* Heading */
+h1 {
+    color: #ff4d6d;
+    margin-bottom: 12px;
+}
+
+/* Message */
+p {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff2f55;
+    transform: scale(1.05);
+}
+
+.no {
+    background: #ddd;
+    color: #555;
+}
+
+.no:hover {
+    background: #ccc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<span class="heart" style="left:10%">❤️</span>
+<span class="heart" style="left:25%">❤️</span>
+<span class="heart" style="left:40%">❤️</span>
+<span class="heart" style="left:55%">❤️</span>
+<span class="heart" style="left:70%">❤️</span>
+<span class="heart" style="left:85%">❤️</span>
+
+<div class="card">
+
+    <!-- Change photo name here -->
+    <img src="39e6d7bd-3e69-4a62-aeff-5ae234ea4bbb.jpeg" class="photo" alt="Samina">
+
+    <h1>My Dear Entifa 💕</h1>
+
+    <p>
+        From the moment you came into my life, everything became more beautiful.<br>
+        My smile, my happiness, my dreams — all have your name on them.<br><br>
+
+        Will you be my Valentine and my forever? ❤️<br><br>
+
+        — Mohsin
+    </p>
+
+    <button onclick="yes()">Yes 💖</button>
+    <button class="no" onclick="no()">No 🙈</button>
+
+</div>
+
+<script>
+
+function yes(){
+    alert("Yayyy! 💕 You are my happiness, Entifa 😍❤️\nForever yours — Mohsin");
+}
+
+function no(){
+    alert("Hehe 😄 Not allowed! Try again 💖");
+}
+
+/* Create random hearts */
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (15 + Math.random()*20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+
+}, 700);
+
+</script>
+
+</body>
+</html>
